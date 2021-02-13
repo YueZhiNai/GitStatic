@@ -14,7 +14,7 @@ function  request_api($url,$data=array(),$token="", $method=Typecho_Http_Client:
         $http->setMethod($method);
         $http->send($url);
         $response = $http->getResponseBody();
-       file_put_contents(md5($url).".txt",$url.$response);
+       //避免引发文件乱 file_put_contents(md5($url).".txt",$url.$response);
          return $response;
         }
 **/
